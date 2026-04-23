@@ -13,6 +13,9 @@ __pycache__/
 *.pyc
 *.pyo
 
+# SolidWorks exports
+*.csv
+
 # OS
 .DS_Store
 

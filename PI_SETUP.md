@@ -30,10 +30,10 @@ Raspberry Pi 4              PCA9685 Board              Servos
 │ GPIO 2   │──── SDA ─────│ SDA         │
 │ (Pin 3)  │               │             │
 │ GPIO 3   │──── SCL ─────│ SCL         │           ┌──────────┐
-│ (Pin 5)  │               │             │  CH0 ────│ Joint 1  │ (270°, 80kg.cm)
-│          │               │ GND     V+  │  CH1 ────│ Joint 2  │ (180°, 150kg.cm)
-│ GND      │──── GND ─────│  │       │  │  CH2 ────│ Joint 3  │ (180°, 80kg.cm)
-│ (Pin 6)  │               │  │       │  │  CH3 ────│ Joint 4  │ (180°, 40kg.cm)
+│ (Pin 5)  │               │             │ CH15 ────│ Joint 1  │ (270°, 80kg.cm)
+│          │               │ GND     V+  │ CH14 ────│ Joint 2  │ (180°, 150kg.cm)
+│ GND      │──── GND ─────│  │       │  │ CH13 ────│ Joint 3  │ (180°, 80kg.cm)
+│ (Pin 6)  │               │  │       │  │ CH10 ────│ Joint 4  │ (180°, 40kg.cm)
 └──────────┘               └──┼───────┼──┘           └──────────┘
                                │       │
                           ┌────┘       └────┐
@@ -55,10 +55,10 @@ Raspberry Pi 4              PCA9685 Board              Servos
 
 | PCA9685 Channel | Joint | Servo Spec | Angle Range |
 |-----------------|-------|------------|-------------|
-| CH0 | joint1 (base rotation) | 80 kg·cm, 270° | ±135° (±2.356 rad) |
-| CH1 | joint2 (shoulder) | 150 kg·cm, 180° | ±90° (±1.571 rad) |
-| CH2 | joint3 (elbow) | 80 kg·cm, 180° | ±90° (±1.571 rad) |
-| CH3 | joint4 (wrist) | 40 kg·cm, 180° | ±90° (±1.571 rad) |
+| CH15 | joint1 (base rotation) | 80 kg·cm, 270° | ±135° (±2.356 rad) |
+| CH14 | joint2 (shoulder) | 150 kg·cm, 180° | ±90° (±1.571 rad) |
+| CH13 | joint3 (elbow) | 80 kg·cm, 180° | ±90° (±1.571 rad) |
+| CH10 | joint4 (wrist) | 40 kg·cm, 180° | ±90° (±1.571 rad) |
 
 ---
 
@@ -296,7 +296,7 @@ ros2 topic echo /servo_joint_states
 ```yaml
 servos:
   joint1:
-    channel: 0           # PCA9685 channel
+    channel: 15          # PCA9685 channel
     min_pulse: 500        # µs at min angle
     max_pulse: 2500       # µs at max angle
     min_angle: -2.356     # radians
@@ -304,6 +304,12 @@ servos:
     offset: 0.0           # calibration offset
     inverted: false       # reverse direction
     servo_range_deg: 270  # physical servo range
+  joint2:
+    channel: 14
+  joint3:
+    channel: 13
+  joint4:
+    channel: 10
 ```
 
 ### Launch Arguments
