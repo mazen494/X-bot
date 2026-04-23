@@ -3,7 +3,17 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="Assem6">
+  name="assem6">
+  
+  <!-- Dummy world link to fix KDL parser warning -->
+  <link name="world"/>
+  
+  <joint name="world_to_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
   <link
     name="base_link">
     <inertial>
@@ -26,7 +36,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/base_link.STL" />
+          filename="package://assem6/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -40,7 +50,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/base_link.STL" />
+          filename="package://assem6/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -66,7 +76,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/link1.STL" />
+          filename="package://assem6/meshes/link1.STL" />
       </geometry>
       <material
         name="">
@@ -80,7 +90,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/link1.STL" />
+          filename="package://assem6/meshes/link1.STL" />
       </geometry>
     </collision>
   </link>
@@ -124,7 +134,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/link2.STL" />
+          filename="package://assem6/meshes/link2.STL" />
       </geometry>
       <material
         name="">
@@ -138,7 +148,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/link2.STL" />
+          filename="package://assem6/meshes/link2.STL" />
       </geometry>
     </collision>
   </link>
@@ -182,7 +192,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/link3.STL" />
+          filename="package://assem6/meshes/link3.STL" />
       </geometry>
       <material
         name="">
@@ -196,7 +206,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/link3.STL" />
+          filename="package://assem6/meshes/link3.STL" />
       </geometry>
     </collision>
   </link>
@@ -240,7 +250,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/link4.STL" />
+          filename="package://assem6/meshes/link4.STL" />
       </geometry>
       <material
         name="">
@@ -254,7 +264,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Assem6/meshes/link4.STL" />
+          filename="package://assem6/meshes/link4.STL" />
       </geometry>
     </collision>
   </link>

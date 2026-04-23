@@ -1,0 +1,61 @@
+# =============================================================
+# Assem6 Robot Arm - Servo Configuration
+# =============================================================
+# This file configures the PCA9685 servo driver for each joint.
+#
+# After calibrating your servos (using calibrate_servos tool),
+# update the offset and pulse values below.
+# =============================================================
+
+servos:
+  joint1:
+    channel: 15              # PCA9685 channel number
+    min_pulse: 500           # PWM pulse at min angle (microseconds)
+    max_pulse: 2500          # PWM pulse at max angle (microseconds)
+    min_angle: -2.356        # Min angle in radians (-135°)
+    max_angle: 2.356         # Max angle in radians (+135°)
+    offset: 0.0              # Calibration offset (radians)
+    inverted: false          # Set true if servo direction is reversed
+    default_position: 0.0    # Position on startup (radians)
+    servo_range_deg: 270     # Physical servo range
+
+  joint2:
+    channel: 14
+    min_pulse: 500
+    max_pulse: 2500
+    min_angle: -1.5708       # -90°
+    max_angle: 1.5708        # +90°
+    offset: 0.0
+    inverted: false
+    default_position: 0.0
+    servo_range_deg: 180
+
+  joint3:
+    channel: 13
+    min_pulse: 500
+    max_pulse: 2500
+    min_angle: -1.5708       # -90°
+    max_angle: 1.5708        # +90°
+    offset: 0.0
+    inverted: false
+    default_position: 0.0
+    servo_range_deg: 180
+
+  joint4:
+    channel: 10
+    min_pulse: 500
+    max_pulse: 2500
+    min_angle: -1.5708       # -90°
+    max_angle: 1.5708        # +90°
+    offset: 0.0
+    inverted: false
+    default_position: 0.0
+    servo_range_deg: 180
+
+hardware:
+  driver: pca9685            # Servo driver type
+  i2c_bus: 1                 # RPi4 default I2C bus
+  i2c_address: 0x40          # PCA9685 default I2C address
+  pwm_frequency: 50          # Hz (standard for servos)
+  update_rate: 50            # Hz (servo command update rate)
+  max_speed: 2.0             # rad/s (safety speed limit)

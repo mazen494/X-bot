@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="barista_world">
+    
+    <!-- Lighting -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    
+    <!-- Physics -->
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    
+    <!-- Barista Counter/Table -->
+    <model name="barista_table">
+      <static>true</static>
+      <pose>0 0 0.25 0 0 0</pose>
+      <link name="table_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.5 1.0 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.5 1.0 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.3 0.1 1</ambient>
+            <diffuse>0.6 0.4 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Cup Dispenser Station -->
+    <model name="cup_dispenser">
+      <static>true</static>
+      <pose>0.5 0.3 0.6 0 0 0</pose>
+      <link name="dispenser_link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.08</radius>
+              <length>0.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.08</radius>
+              <length>0.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Ice Dispenser Station -->
+    <model name="ice_dispenser">
+      <static>true</static>
+      <pose>-0.3 0.3 0.6 0 0 0</pose>
+      <link name="ice_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.15 0.15 0.25</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.15 0.15 0.25</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.8 1.0 1</ambient>
+            <diffuse>0.7 0.9 1.0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Drink 1 Dispenser (Red) -->
+    <model name="drink1_dispenser">
+      <static>true</static>
+      <pose>0.3 -0.3 0.65 0 0 0</pose>
+      <link name="drink1_link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.8 0.1 0.1 1</ambient>
+            <diffuse>1.0 0.2 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Drink 2 Dispenser (Orange) -->
+    <model name="drink2_dispenser">
+      <static>true</static>
+      <pose>0.0 -0.35 0.65 0 0 0</pose>
+      <link name="drink2_link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1.0 0.5 0.0 1</ambient>
+            <diffuse>1.0 0.6 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Drink 3 Dispenser (Purple) -->
+    <model name="drink3_dispenser">
+      <static>true</static>
+      <pose>-0.3 -0.3 0.65 0 0 0</pose>
+      <link name="drink3_link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.6 0.2 0.8 1</ambient>
+            <diffuse>0.7 0.3 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Drink 4 Dispenser (Green) -->
+    <model name="drink4_dispenser">
+      <static>true</static>
+      <pose>-0.5 -0.2 0.65 0 0 0</pose>
+      <link name="drink4_link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.8 0.2 1</ambient>
+            <diffuse>0.3 0.9 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Service Point (Tray) -->
+    <model name="service_tray">
+      <static>true</static>
+      <pose>-0.5 0.2 0.52 0 0 0</pose>
+      <link name="tray_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.25 0.20 0.02</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.25 0.20 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Sample Cups -->
+    <model name="cup1">
+      <static>true</static>
+      <pose>0.5 0.3 0.75 0 0 0</pose>
+      <link name="cup_link">
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1.0 1.0 1.0 1</ambient>
+            <diffuse>1.0 1.0 1.0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+  </world>
+</sdf>

@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: Assem6
+    relative_path: urdf/Assem6.urdf
+  srdf:
+    relative_path: config/Assem6.srdf
+  package_settings:
+    author_name: Eng. Mazen
+    author_email: mazen49475@gmail.com
+    generated_timestamp: 1767827949
