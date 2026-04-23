@@ -52,7 +52,7 @@ class BaristaRobot(Node):
     def load_config(self):
         """Load configuration from YAML file."""
         config_paths = [
-            '/home/mma/x-bot/src/Assem6/config/recipes.yaml',
+            '/home/mma/x-bot/src/assem6/config/recipes.yaml',
             os.path.join(os.path.dirname(__file__), '../config/recipes.yaml'),
         ]
         
